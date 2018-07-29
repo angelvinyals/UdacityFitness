@@ -8,11 +8,14 @@ import History from './components/History'
 
 export default class App extends Component<Props> {
   render() {
+
+    
+
     return (
       <Provider store= {createStore(reducer)}>          
         <View style= {{flex:1}}>
           <View style= {{height:20}}/>
-          <History/>          
+            <History/>
         </View>
       </Provider>
     )

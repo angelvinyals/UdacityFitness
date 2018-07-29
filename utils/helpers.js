@@ -1,8 +1,11 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Text } from 'react-native'
 //import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
 import { white, red, orange,  blue, lightPurp, pink ,  gold, yellow } from './colors'
-
+import Ionicon from 'react-native-vector-icons/Ionicons';
+import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 export function getDailyReminderValue () {
 	return{
 		today: "Don't forget to log your data today!"
@@ -76,7 +79,11 @@ export function getMetricMetaInfo (metric) {
 			getIcon() {
 				return (
 					<View style={[styles.iconContainer, {backgroundColor: red}]}>
-						<Text>icon-run</Text>
+						<MaterialIcon
+							name= 'directions-run'
+							color={'black'}
+							size={35}
+						/>
 					</View>
 				)
 			}
@@ -90,7 +97,11 @@ export function getMetricMetaInfo (metric) {
 			getIcon() {
 				return (
 					<View style={[styles.iconContainer, {backgroundColor: pink}]}>
-						<Text>icon-bike</Text>
+						<MaterialCommunityIcon
+							name= 'bike'
+							color={'black'}
+							size={35}
+						/>
 					</View>
 				)
 			}
@@ -104,7 +115,11 @@ export function getMetricMetaInfo (metric) {
 			getIcon() {
 				return (
 					<View style={[styles.iconContainer, {backgroundColor: blue}]}>
-						<Text>icon-swim</Text>
+						<MaterialCommunityIcon
+							name= 'swim'
+							color={'black'}
+							size={35}
+						/>
 					</View>
 				)
 			}
@@ -118,7 +133,11 @@ export function getMetricMetaInfo (metric) {
 			getIcon() {
 				return (
 					<View style={[styles.iconContainer, {backgroundColor: lightPurp}]}>
-						<Text>icon-bed</Text>
+						<FontAwesome
+							name= 'bed'
+							color={'black'}
+							size={35}
+						/>
 					</View>
 				)
 			}
@@ -132,7 +151,11 @@ export function getMetricMetaInfo (metric) {
 			getIcon() {
 				return (
 					<View style={[styles.iconContainer, {backgroundColor: yellow }]}>
-						<Text>icon-eat</Text>
+						<MaterialCommunityIcon
+							name= 'food'
+							color={'black'}
+							size={35}
+						/>
 					</View>
 				)
 			}
