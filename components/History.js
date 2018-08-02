@@ -6,7 +6,7 @@ import { timeToString, getDailyReminderValue } from  '../utils/helpers'
 import { fetchCalendarResults } from  '../utils/api'
 import UdaciFitnessCalendar from 'udacifitness-calendar'
 import { white } from '../utils/colors'
-import DataHeader from  './DataHeader'
+import DateHeader from  './DateHeader'
 import MetricCard from './MetricCard'
 
 class History extends Component {
@@ -30,7 +30,7 @@ class History extends Component {
 	    <View style={styles.item}>
 	      {today
 	        ? <View>
-	        	<DataHeader date={formattedDate} />
+	        	<DateHeader date={formattedDate} />
 	        	<Text style={styles.noDataText}>
 	        		{today}
 	        	</Text>
@@ -44,7 +44,7 @@ class History extends Component {
 	renderEmptyDate(formattedDate) {
 	    return (
 	    	<View style={styles.item}>
-	        	<DataHeader date={formattedDate} />
+	        	<DateHeader date={formattedDate} />
 	        	<Text style={styles.noDataText}>
 	        		You did not log any data on this day.
 	        	</Text>
