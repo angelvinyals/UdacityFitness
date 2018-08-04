@@ -9,14 +9,11 @@ import AddEntry from './components/AddEntry'
 
 export default class App extends Component<Props> {
   render() {
-
-    
-
     return (
       <Provider store= {createStore(reducer)}>          
         <View style= {{flex:1}}>
           <View style= {{height:20}}/>
-            <AddEntry/>
+            <History/>
         </View>
       </Provider>
     )

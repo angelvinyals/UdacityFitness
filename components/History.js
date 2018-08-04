@@ -9,7 +9,11 @@ import { white } from '../utils/colors'
 import DateHeader from  './DateHeader'
 import MetricCard from './MetricCard'
 
+
 class History extends Component {
+	state:{
+		ready: false
+	}
 	componentDidMount(){
 		const { dispatch } = this.props 
 
@@ -54,6 +58,13 @@ class History extends Component {
 
 	render(){
 		const { entries } =this.props
+		const { ready }= this.state
+
+		if { ready === false}{
+			return <Apploading>
+		}
+
+
 		return(			
 			<UdaciFitnessCalendar
 		        items={entries}
