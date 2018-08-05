@@ -10,6 +10,7 @@ import {submitEntry, removeEntry} from '../utils/api'
 import { connect } from 'react-redux'
 import { addEntry } from '../actions'
 import { white , purple } from '../utils/colors'
+import { NavigationActions } from 'react-navigation'
 
 
 function SubmitBtn ({ onPress }) {
@@ -82,7 +83,7 @@ class AddEntry extends Component {
 			eat:0,
 		}))
 
-		//navigato to home
+		this.toHome()
 
 		submitEntry({ key, entry})
 
@@ -96,9 +97,16 @@ class AddEntry extends Component {
 			[key]: getDailyReminderValue()
 		}))
 
-		//Route to Home
+		this.toHome()
 
 		removeEntry(key)
+	}
+
+	toHome = () => {
+		const backAction = NavigationActions.back({
+		  key: 'AddEntry',
+		})
+		this.props.navigation.dispatch(backAction)
 	}
 
 	render(){
