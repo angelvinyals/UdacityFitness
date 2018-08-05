@@ -5,11 +5,13 @@ import { Provider } from  'react-redux'
 import reducer from './reducers'
 import History from './components/History'
 import AddEntry from './components/AddEntry'
+import Live     from './components/Live'
 import EntryDetail from './components/EntryDetail'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { white , purple } from './utils/colors'
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function UdaciStatusBar({ backgroundColor, ...props }) {
   return (
@@ -34,6 +36,13 @@ const Tabs = createBottomTabNavigator({
       tabBarIcon: ({ tintColor} ) =><FontAwesome name='plus-square' size={30} color={tintColor} />
     }
   },
+  Live:{
+    screen: Live,
+    navigationOptions:{
+      tabBarLabel: 'Live',
+      tabBarIcon: ({ tintColor} ) =><Ionicon name='md-speedometer' size={30} color={tintColor} />
+    }
+  }
 },{
   navigationOptions: {
     header: null
