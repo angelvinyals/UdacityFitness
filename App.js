@@ -5,7 +5,8 @@ import { Provider } from  'react-redux'
 import reducer from './reducers'
 import History from './components/History'
 import AddEntry from './components/AddEntry'
-import { createBottomTabNavigator } from 'react-navigation';
+import EntryDetail from './components/EntryDetail'
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import { white , purple } from './utils/colors'
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -53,6 +54,21 @@ const Tabs = createBottomTabNavigator({
   }
 })
 
+const MainNavigator = createStackNavigator({
+  Home:{
+    screen: Tabs,
+  },
+  EntryDetail: {
+    screen: EntryDetail,
+    navigationOptions: () => ({
+      headerTintColor: white,
+      headerStyle:{
+        backgroundColor: purple,
+
+      }
+    })
+  }
+})
 
 export default class App extends Component<Props> {
   render() {
@@ -61,7 +77,7 @@ export default class App extends Component<Props> {
         <View style= {{flex:1}}>
           <View style= {{height:20}}/>
             <UdaciStatusBar backgroundColor={purple} barStyle='light-content' />
-            <Tabs />
+            <MainNavigator />
         </View>
       </Provider>
     )
