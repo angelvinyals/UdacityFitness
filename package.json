@@ -12,6 +12,7 @@
     "babel-preset-react-native": "^4.0.0",
     "react": "16.4.1",
     "react-native": "^0.55.4",
+    "react-native-android-location-services-dialog-box": "^2.6.0",
     "react-native-permissions": "^1.1.1",
     "react-native-vector-icons": "^5.0.0",
     "react-navigation": "^2.11.2",

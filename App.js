@@ -5,6 +5,7 @@ import { Provider } from  'react-redux'
 import reducer from './reducers'
 import History from './components/History'
 import AddEntry from './components/AddEntry'
+//import GeolocationExample from './components/GeolocationExample.js'
 import Live     from './components/Live'
 import EntryDetail from './components/EntryDetail'
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
