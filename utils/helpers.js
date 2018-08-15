@@ -1,11 +1,14 @@
 import React from 'react'
-import { View, StyleSheet, Text } from 'react-native'
+import { View, StyleSheet, Text, AsyncStorage } from 'react-native'
 //import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
 import { white, red, orange,  blue, lightPurp, pink ,  gold, yellow } from './colors'
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import PushNotification from  'react-native-push-notification'
+
+const NOTIFICATION_KEY = 'UdacityFitness: notifications'
 
 
 export function getDailyReminderValue () {
@@ -171,3 +174,35 @@ export function getMetricMetaInfo (metric) {
 
 }
 
+export function clearLocalNotification () {
+  
+}
+
+
+function IdString () {
+	// Math.random should be unique because of its seeding algorithm.
+	// Convert it to base 36 (numbers + letters), and grab the first 9 characters
+	// after the decimal.
+	return '_' + Math.random().toString(36).substr(2, 9);
+}
+
+function createNotification () {
+	return {
+	  	id: IdString(),
+	    title: 'Log your stats!',
+	    message: "👋 don't forget to log your stats for today!",
+	    playSound: true,
+	    soundName: 'default', // (optional) Sound to play when the notification is shown. Value of 'default' plays the default sound. It can be set to a custom sound such as 'android.resource://com.xyz/raw/my_sound'. It will look for the 'my_sound' audio file in 'res/raw' directory and play it. default: 'default' (default sound is played)
+	    vibrate: true, // (optional) default: true
+	    vibration: 300, // vibration length in milliseconds, ignored if vibrate=false, default: 1000
+	      
+	    
+	      sticky: false,
+	      
+	    
+	}
+}
+
+export function setLocalNotification () {
+
+}
